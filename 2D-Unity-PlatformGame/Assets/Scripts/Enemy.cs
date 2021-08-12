@@ -44,11 +44,13 @@ public class Enemy : MonoBehaviour
     {
         if (transform.position.x < player.position.x)
         {
+            animator.SetBool("IsRunningBool", true);
             rb2d.velocity = new Vector2(moveSpeed, 0);
             transform.localScale = new Vector2(-1, 1);
         }
         else if (transform.position.x > player.position.x)
         {
+            animator.SetBool("IsRunningBool", true);
             rb2d.velocity = new Vector2(-moveSpeed, 0);
             transform.localScale = new Vector2(1, 1);
         }
@@ -58,6 +60,7 @@ public class Enemy : MonoBehaviour
     public void StopChasingPlayer()
     {
         rb2d.velocity = new Vector2(0, 0);
+        animator.SetBool("IsRunningBool", false);
     }
 
     public void takeDamage( int damage)
