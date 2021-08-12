@@ -15,6 +15,9 @@ public class Enemy : MonoBehaviour
 
     Rigidbody2D rb2d;
 
+    private float dazeTime;
+    public float startDazedTime;
+
     public Animator animator;
     public int maxHealth = 100;
     int currentHealth;
@@ -28,6 +31,16 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (dazeTime <= 0 )
+        {
+            moveSpeed = 3;
+        }
+        else
+        {
+            moveSpeed = 0;
+            dazeTime -= Time.deltaTime;
+        }
+
         float distPlayer = Vector2.Distance(transform.position, player.position);
         
         if(distPlayer < agroRange)
@@ -38,6 +51,7 @@ public class Enemy : MonoBehaviour
         {
             StopChasingPlayer();
         }
+
     }
 
     void ChasePlayer()
@@ -66,6 +80,7 @@ public class Enemy : MonoBehaviour
     public void takeDamage( int damage)
     {
         animator.SetTrigger("Hurt");
+        dazeTime = startDazedTime;
         currentHealth -= damage;
         if(currentHealth <= 0)
         {
