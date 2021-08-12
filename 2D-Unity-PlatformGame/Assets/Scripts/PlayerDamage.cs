@@ -5,9 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class PlayerDamage : MonoBehaviour
 {
+    public Animator animator;
     public int PlayerHealth = 5;
     public float EnemyAttackRate = 2f;
     public float NextEnemyAttack = 0f;
+
     
     // Start is called before the first frame update
     void Start()
@@ -27,7 +29,7 @@ public class PlayerDamage : MonoBehaviour
         {
             if (PlayerHealth <= 1)
             {
-                EnemyDied();
+                PlayerDied();
             }
             else if(PlayerHealth > 1 )
             {
@@ -38,13 +40,14 @@ public class PlayerDamage : MonoBehaviour
         }
     }
 
-    void EnemyDied()
+    void PlayerDied()
     {
         Debug.Log("Player DIED " + PlayerHealth);
         SceneManager.LoadScene("SampleScene");
     }
     void EnemyAttckFunction()
     {
+        animator.SetTrigger("Attack");
         Debug.Log("Player CURRENT health " + PlayerHealth);
     }
 }
