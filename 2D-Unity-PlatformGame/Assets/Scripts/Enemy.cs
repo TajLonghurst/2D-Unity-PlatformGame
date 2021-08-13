@@ -92,9 +92,10 @@ public class Enemy : MonoBehaviour
     }
     void Die() 
     {
+        
+        SoundManeger.EnemyDeathSound.Play();
+        
         animator.SetBool("IsDead", true);
-
-        SoundManeger.EnemyDeath.Play();
 
         StopChasingPlayer();
 
@@ -104,6 +105,5 @@ public class Enemy : MonoBehaviour
         GetComponent<CircleCollider2D>().enabled = false;
 
         this.enabled = false;
-
     }
 }
