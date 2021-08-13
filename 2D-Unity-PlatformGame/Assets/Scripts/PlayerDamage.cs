@@ -6,7 +6,9 @@ using UnityEngine.SceneManagement;
 public class PlayerDamage : MonoBehaviour
 {
     public Animator animator;
-    public int PlayerHealth = 5;
+    
+    [SerializeField]
+    Hearts Healthscript;
     public float EnemyAttackRate = 2f;
     public float NextEnemyAttack = 0f;
 
@@ -27,14 +29,14 @@ public class PlayerDamage : MonoBehaviour
     {
         if(Time.time  >= NextEnemyAttack)
         {
-            if (PlayerHealth <= 1)
+            if (Healthscript.health <= 0)
             {
                 PlayerDied();
             }
-            else if(PlayerHealth > 1 )
+            else if(Healthscript.health > 1 )
             {
                 EnemyAttckFunction();
-                PlayerHealth--;
+                Healthscript.health--;
                 NextEnemyAttack = Time.time + 5f /EnemyAttackRate;
             } 
         }
@@ -42,12 +44,12 @@ public class PlayerDamage : MonoBehaviour
 
     void PlayerDied()
     {
-        Debug.Log("Player DIED " + PlayerHealth);
+        Debug.Log("Player DIED " + Healthscript.health);
         SceneManager.LoadScene("SampleScene");
     }
     void EnemyAttckFunction()
     {
         animator.SetTrigger("Attack");
-        Debug.Log("Player CURRENT health " + PlayerHealth);
+        Debug.Log("Player CURRENT health " + Healthscript.health);
     }
 }
