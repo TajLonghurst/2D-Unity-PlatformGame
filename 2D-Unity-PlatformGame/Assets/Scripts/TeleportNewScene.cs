@@ -2,15 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoundManeger : MonoBehaviour
+public class TeleportNewScene : MonoBehaviour
 {
-
-    public AudioSource SwordSound, JumpSound, EnemyDeathSound, MenuMainSound;
-
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame

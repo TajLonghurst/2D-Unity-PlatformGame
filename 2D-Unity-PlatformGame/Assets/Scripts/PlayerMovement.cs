@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     bool Crouch = false;
     public Animator animator;
 
+    public SoundManeger soundManeger;
+
     // Update is called once per frame
     void Update()
     {
@@ -22,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
         {
             jump = true;
             animator.SetBool("Jump", true);
+            soundManeger.JumpSound.Play();
         }
 
         if(Input.GetButtonDown("Crouch"))

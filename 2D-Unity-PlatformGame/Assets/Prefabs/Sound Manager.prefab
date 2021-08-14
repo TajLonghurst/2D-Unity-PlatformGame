@@ -43,4 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e10c8e18b7dd1404f8ae76473d4d5780, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyDeath: {fileID: 8300000, guid: 44ef96dd7aea3104ca71512865a386e3, type: 3}
+  SwordSound: {fileID: 2795796351497953337, guid: 0971eab158dc7704f9d10bd71076e71b, type: 3}
+  JumpSound: {fileID: 2866757233425741448, guid: 1d80955a0aaade84d8b117b0614e95bf, type: 3}
+  EnemyDeathSound: {fileID: 5669818806097791592, guid: 448498a9750b6b04f87eb71895190d62, type: 3}
+  MenuMainSound: {fileID: 2529090125859116537, guid: 2eca362ead3e8954fa3a6b43d9fe6c6e, type: 3}

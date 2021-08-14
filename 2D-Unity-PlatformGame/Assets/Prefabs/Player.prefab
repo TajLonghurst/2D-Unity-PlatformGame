@@ -218,6 +218,7 @@ MonoBehaviour:
   controller: {fileID: 5712108696250569183}
   runSpeed: 40
   animator: {fileID: 5712108696250569152}
+  soundManeger: {fileID: 0}
 --- !u!114 &5712108696250569183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -351,3 +352,4 @@ MonoBehaviour:
     m_Bits: 512
   attackDamage: 50
   AttackRate: 2
+  SoundManeger: {fileID: 0}

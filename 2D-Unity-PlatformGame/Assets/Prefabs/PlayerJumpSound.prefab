@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2866757233425741449}
   - component: {fileID: 2866757233425741448}
   m_Layer: 0
-  m_Name: MenuClickSource
+  m_Name: PlayerJumpSound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41,7 +41,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d0fe7db664f1b6247a640142eb3a9f02, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 4c77aa86395593348aeb2e66950a73d5, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
