@@ -8,7 +8,7 @@ public class EndMenu : MonoBehaviour
     public void RestartGame()
     {
         Debug.Log("Restart Game");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 3);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 5);
     }
     public void QuitGame()
     {
