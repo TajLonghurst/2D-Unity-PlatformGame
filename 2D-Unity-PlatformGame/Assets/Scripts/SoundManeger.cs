@@ -7,15 +7,4 @@ public class SoundManeger : MonoBehaviour
 
     public AudioSource SwordSound, JumpSound, EnemyDeathSound, MenuMainSound;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
