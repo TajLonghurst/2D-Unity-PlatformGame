@@ -25,8 +25,6 @@ public class BossMovment : MonoBehaviour
     public Animator animator;
     public int maxHealth = 0;
     int currentHealth;
-
-    public string textvalue;
     public Text Healthtext;
 
     public SoundManeger SoundManeger;
