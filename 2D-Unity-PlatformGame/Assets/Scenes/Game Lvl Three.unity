@@ -266,7 +266,7 @@ MonoBehaviour:
   AttackRange: 0.5
   enemyLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   attackDamage: 50
   AttackRate: 2
   SoundManeger: {fileID: 249069054}
@@ -2034,7 +2034,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 939068134}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.36, y: -2.16, z: 0}
+  m_LocalPosition: {x: -3.04, y: -3.12, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2053,11 +2053,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 25065098}
-  agroRange: 5
+  agroRange: 3
   moveSpeed: 2
-  startDazedTime: 0.7
+  startDazedTime: 1
   animator: {fileID: 939068135}
-  maxHealth: 600
+  maxHealth: 500
   SoundManeger: {fileID: 249069054}
 --- !u!1 &951330524
 GameObject:
@@ -4989,7 +4989,8 @@ GameObject:
   - component: {fileID: 2063204947}
   - component: {fileID: 2063204946}
   - component: {fileID: 2063204945}
-  m_Layer: 0
+  - component: {fileID: 2063204948}
+  m_Layer: 11
   m_Name: BigBoss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5074,7 +5075,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2063204941}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.68, y: -1.58, z: 0}
+  m_LocalPosition: {x: 5.82, y: -1.65, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5143,6 +5144,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2063204948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2063204941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b1fc2e44bd01f14e89d514b192ad379, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 25065098}
+  agroRange: 5
+  moveSpeed: 1
+  startDazedTime: 1
+  animator: {fileID: 0}
+  maxHealth: 100
+  SoundManeger: {fileID: 249069054}
 --- !u!1 &2133958013
 GameObject:
   m_ObjectHideFlags: 0

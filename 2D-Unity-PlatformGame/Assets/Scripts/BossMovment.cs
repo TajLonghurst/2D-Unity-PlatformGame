@@ -8,9 +8,6 @@ public class BossMovment : MonoBehaviour
     Transform player;
 
     [SerializeField]
-    Transform bossPostion;
-
-    [SerializeField]
     float agroRange;
 
     [SerializeField]
