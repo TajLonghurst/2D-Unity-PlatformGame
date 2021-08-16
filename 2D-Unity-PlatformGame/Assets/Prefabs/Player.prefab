@@ -106,7 +106,6 @@ GameObject:
   - component: {fileID: 5712108696250569154}
   - component: {fileID: 5712108696250569153}
   - component: {fileID: 5712108696250569152}
-  - component: {fileID: 5712108696250569159}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -332,24 +331,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &5712108696250569159
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5712108696250569176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0491b75b845cc0479c1698543a8531c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 5712108696250569152}
-  AttackPoint: {fileID: 5712108695697601612}
-  AttackRange: 0.5
-  enemyLayers:
-    serializedVersion: 2
-    m_Bits: 512
-  attackDamage: 50
-  AttackRate: 2
-  SoundManeger: {fileID: 0}

@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class BossMovment : MonoBehaviour
+public class MiniBossMovement : MonoBehaviour
 {
     [SerializeField]
     Transform player;
@@ -14,20 +13,14 @@ public class BossMovment : MonoBehaviour
     [SerializeField]
     float moveSpeed;
 
-    [SerializeField]
-    float moveSpeedChange;
-
     Rigidbody2D rb2d;
 
     private float dazeTime;
     public float startDazedTime;
 
     public Animator animator;
-    public int maxHealth = 0;
+    public int maxHealth = 100;
     int currentHealth;
-
-    public string textvalue;
-    public Text Healthtext;
 
     public SoundManeger SoundManeger;
     // Start is called before the first frame update
@@ -35,34 +28,14 @@ public class BossMovment : MonoBehaviour
     {
         rb2d = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
-
-    
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        Healthtext.text =  "" + currentHealth;
-            if (currentHealth  <= 100)
-            {
-                Healthtext.text = "Dead";
-            }
-
-
-        if (currentHealth < 900)
-        {
-            moveSpeedChange = 5;
-
-        }
-        else
-        {
-            moveSpeedChange = 1;
-        }
-
         if (dazeTime <= 0 )
         {
-            moveSpeed = moveSpeedChange;
+            moveSpeed = 3;
         }
         else
         {
@@ -86,35 +59,15 @@ public class BossMovment : MonoBehaviour
     {
         if (transform.position.x < player.position.x)
         {
-            if (currentHealth < 900)
-            {
-                animator.SetBool("Running", true);
-                rb2d.velocity = new Vector2(moveSpeed, 0);
-                transform.localScale = new Vector2(6, 6);
-            }
-            else
-            {
-                animator.SetBool("Walking", true);
-                rb2d.velocity = new Vector2(moveSpeed, 0);
-                transform.localScale = new Vector2(5, 5);
-            }
-            
+            animator.SetBool("IsRunningBool", true);
+            rb2d.velocity = new Vector2(moveSpeed, 0);
+            transform.localScale = new Vector2(-1, 1);
         }
         else if (transform.position.x > player.position.x)
         {
-            if (currentHealth < 900)
-            {
-                animator.SetBool("Running", true);
-                rb2d.velocity = new Vector2(-moveSpeed, 0);
-                transform.localScale = new Vector2(-6, 6);
-            }
-            else
-            {
-                animator.SetBool("Walking", true);
-                rb2d.velocity = new Vector2(-moveSpeed, 0);
-                transform.localScale = new Vector2(-5, 5);
-            }
-
+            animator.SetBool("IsRunningBool", true);
+            rb2d.velocity = new Vector2(-moveSpeed, 0);
+            transform.localScale = new Vector2(1, 1);
         }
     }
     
@@ -122,10 +75,10 @@ public class BossMovment : MonoBehaviour
     public void StopChasingPlayer()
     {
         rb2d.velocity = new Vector2(0, 0);
-        animator.SetBool("Walking", false);
+        animator.SetBool("IsRunningBool", false);
     }
 
-    public void BosstakeDamage( int damage)
+    public void MiniBosstakeDamage( int damage)
     {
         animator.SetTrigger("Hurt");
         dazeTime = startDazedTime;
@@ -145,7 +98,7 @@ public class BossMovment : MonoBehaviour
 
         StopChasingPlayer();
 
-        Debug.Log("Boss Killed Killed");
+        Debug.Log("Enemy Killed");
         
         GetComponent<BoxCollider2D>().enabled = false;
         GetComponent<CircleCollider2D>().enabled = false;

@@ -37,7 +37,7 @@ public class PlayerCombatBoss : MonoBehaviour
 
         foreach (Collider2D enemy in hitEnemies)
         {
-          enemy.GetComponent<BossMovment>().takeDamage(attackDamage);
+          enemy.GetComponent<BossMovment>().BosstakeDamage(attackDamage);
         }
     }
     void OnDrawGizmosSelected() 
