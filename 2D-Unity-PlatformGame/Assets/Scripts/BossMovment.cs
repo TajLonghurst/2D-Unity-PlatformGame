@@ -8,6 +8,9 @@ public class BossMovment : MonoBehaviour
     Transform player;
 
     [SerializeField]
+    Transform bossPostion;
+
+    [SerializeField]
     float agroRange;
 
     [SerializeField]
@@ -61,13 +64,13 @@ public class BossMovment : MonoBehaviour
         {
             animator.SetBool("IsRunningBool", true);
             rb2d.velocity = new Vector2(moveSpeed, 0);
-            transform.localScale = new Vector2(-1, 1);
+            transform.localScale = new Vector2(-5, 5);
         }
         else if (transform.position.x > player.position.x)
         {
             animator.SetBool("IsRunningBool", true);
             rb2d.velocity = new Vector2(-moveSpeed, 0);
-            transform.localScale = new Vector2(1, 1);
+            transform.localScale = new Vector2(5, 5);
         }
     }
     
