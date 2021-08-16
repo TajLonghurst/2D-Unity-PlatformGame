@@ -59,15 +59,15 @@ public class BossMovment : MonoBehaviour
     {
         if (transform.position.x < player.position.x)
         {
-            animator.SetBool("IsRunningBool", true);
+            animator.SetBool("Walking", true);
             rb2d.velocity = new Vector2(moveSpeed, 0);
-            transform.localScale = new Vector2(-5, 5);
+            transform.localScale = new Vector2(5, 5);
         }
         else if (transform.position.x > player.position.x)
         {
-            animator.SetBool("IsRunningBool", true);
+            animator.SetBool("Walking", true);
             rb2d.velocity = new Vector2(-moveSpeed, 0);
-            transform.localScale = new Vector2(5, 5);
+            transform.localScale = new Vector2(-5, 5);
         }
     }
     
@@ -75,7 +75,7 @@ public class BossMovment : MonoBehaviour
     public void StopChasingPlayer()
     {
         rb2d.velocity = new Vector2(0, 0);
-        animator.SetBool("IsRunningBool", false);
+        animator.SetBool("Walking", false);
     }
 
     public void takeDamage( int damage)
