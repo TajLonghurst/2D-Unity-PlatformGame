@@ -53,7 +53,6 @@ public class Enemy : MonoBehaviour
         {
             StopChasingPlayer();
         }
-
     }
 
     void ChasePlayer()

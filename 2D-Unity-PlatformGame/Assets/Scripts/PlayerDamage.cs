@@ -29,7 +29,7 @@ public class PlayerDamage : MonoBehaviour
     {
         if(Time.time  >= NextEnemyAttack)
         {
-            if (Healthscript.health <= 0)
+            if (Healthscript.health <= 1)
             {
                 PlayerDied();
             }
