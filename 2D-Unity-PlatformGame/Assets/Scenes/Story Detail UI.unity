@@ -481,7 +481,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "A brave warrior by the name \"Unity Engine\" was out looking for her stolen
-    treasue. \n\nWhich had been taken from her by and evil force. "
+    treasure. \n\nWhich had been taken from her by and evil force. "
 --- !u!222 &787427270
 CanvasRenderer:
   m_ObjectHideFlags: 0
